@@ -19,7 +19,7 @@ import { events } from '../data/events';
 import { startups } from '../data/startups';
 import { partners } from '../data/partners';
 
-const VIDEO_URL = 'https://www.youtube.com/watch?v=b6kzJukBrSI';
+const VIDEO_URL = 'https://www.youtube.com/watch?v=hhYQ_X5C0mk';
 
 const HomePage: React.FC = () => {
   const upcomingEvents = events.filter(event => event.type === 'upcoming').slice(0, 3);

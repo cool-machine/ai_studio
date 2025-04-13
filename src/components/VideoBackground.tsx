@@ -8,7 +8,7 @@ interface VideoBackgroundProps {
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({ 
   children, 
-  videoUrl = 'https://www.youtube.com/watch?v=b6kzJukBrSI'
+  videoUrl = 'https://www.youtube.com/watch?v=hhYQ_X5C0mk'
 }) => {
   return (
     <div className="relative min-h-screen overflow-hidden">
