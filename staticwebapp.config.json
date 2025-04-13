@@ -1,0 +1,22 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/css/*", "/js/*", "/*.{png,jpg,gif,svg,ico}"]
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.youtube.com *.unsplash.com; img-src 'self' data: https: blob:; media-src 'self' https: blob:;",
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}

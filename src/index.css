@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-neutral dark:text-gray-100 bg-white dark:bg-dark transition-colors duration-200;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-neutral-dark dark:text-white;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark dark:bg-primary/90 dark:hover:bg-primary;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-dark dark:bg-secondary/90 dark:hover:bg-secondary;
+  }
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white dark:border-primary/70 dark:text-primary/70 dark:hover:bg-primary/20 dark:hover:text-white;
+  }
+  .btn-outline-secondary {
+    @apply border border-secondary text-secondary hover:bg-secondary hover:text-white dark:border-secondary/70 dark:text-secondary/70 dark:hover:bg-secondary/20 dark:hover:text-white;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  .card {
+    @apply bg-white dark:bg-dark-card rounded-lg shadow-md overflow-hidden transition-colors duration-200;
+  }
+  .nav-link {
+    @apply text-neutral-dark dark:text-gray-200 hover:text-primary dark:hover:text-white transition-colors duration-200;
+  }
+  .nav-link-active {
+    @apply text-primary dark:text-white font-medium;
+  }
+}
+
+/* React Player */
+.react-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 177.77777778vh !important; /* 16:9 aspect ratio */
+  height: 56.25vw !important; /* 16:9 aspect ratio */
+}
+
+/* Swiper Customization */
+.swiper-pagination-bullet {
+  @apply bg-primary dark:bg-primary/70 opacity-70;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary dark:bg-primary opacity-100;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient Text */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #011F5B, #990000);
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(to right, #1e40af, #dc2626);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Testimonial Slider */
+.testimonial-swiper {
+  padding-bottom: 50px;
+}
+
+.testimonial-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+/* Dark mode specific styles */
+.dark ::selection {
+  @apply bg-primary/30 text-white;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Form elements dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+  @apply bg-dark-lighter border-gray-700 text-white placeholder-gray-400;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  @apply border-primary/50 ring-primary/20;
+}
+
+/* React Quill dark mode */
+.dark .ql-toolbar {
+  @apply bg-dark-lighter border-gray-700 !important;
+}
+
+.dark .ql-container {
+  @apply bg-dark-lighter border-gray-700 text-white !important;
+}
+
+.dark .ql-editor {
+  @apply text-white;
+}
+
+.dark .ql-picker {
+  @apply text-white !important;
+}
+
+.dark .ql-stroke {
+  @apply stroke-white !important;
+}
+
+.dark .ql-fill {
+  @apply fill-white !important;
+}
+
+/* React DatePicker dark mode */
+.dark .react-datepicker {
+  @apply bg-dark-lighter border-gray-700 !important;
+}
+
+.dark .react-datepicker__header {
+  @apply bg-dark border-gray-700 !important;
+}
+
+.dark .react-datepicker__current-month,
+.dark .react-datepicker__day-name,
+.dark .react-datepicker__day {
+  @apply text-white !important;
+}
+
+.dark .react-datepicker__day:hover {
+  @apply bg-gray-700 !important;
+}
+
+.dark .react-datepicker__day--selected {
+  @apply bg-primary text-white !important;
+}
+
+/* Toast notifications dark mode */
+.dark .Toastify__toast {
+  @apply bg-dark-lighter text-white !important;
+}
+
+.dark .Toastify__close-button {
+  @apply text-white !important;
+}
+
+/* Section backgrounds dark mode */
+.dark .bg-white {
+  @apply bg-dark;
+}
+
+.dark .bg-primary-light {
+  @apply bg-dark-lighter;
+}
+
+.dark .bg-secondary-light {
+  @apply bg-dark-lighter;
+}
+
+/* Card backgrounds dark mode */
+.dark .card {
+  @apply bg-dark-card border-dark-lighter;
+}
+
+/* Form backgrounds dark mode */
+.dark .form-input,
+.dark .form-select,
+.dark .form-textarea {
+  @apply bg-dark-card border-dark-lighter;
+}
+
+/* Text colors in dark mode */
+.dark .text-neutral {
+  @apply text-gray-100;
+}
+
+.dark .text-neutral-light {
+  @apply text-gray-300;
+}
+
+.dark .text-neutral-dark {
+  @apply text-white;
+}
+
+/* Card text in dark mode */
+.dark .card p {
+  @apply text-gray-200;
+}
+
+.dark .card h3 {
+  @apply text-white;
+}
+
+/* Section text in dark mode */
+.dark section p {
+  @apply text-gray-200;
+}
+
+.dark section h2,
+.dark section h3,
+.dark section h4 {
+  @apply text-white;
+}
+
+/* List text in dark mode */
+.dark ul li,
+.dark ol li {
+  @apply text-gray-200;
+}
+
+/* Icon colors in dark mode */
+.dark .text-primary {
+  @apply text-white;
+}
+
+.dark .bg-primary-light {
+  @apply bg-primary/20;
+}
+
+/* Stats section specific dark mode */
+.dark .stats-icon {
+  @apply text-white;
+}
+
+.dark .stats-number {
+  @apply text-white;
+}
+
+.dark .stats-title {
+  @apply text-gray-200;
+}
